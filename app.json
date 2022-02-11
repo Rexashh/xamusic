@@ -77,7 +77,7 @@
         },
         "UPSTREAM_BRANCH": {
             "description": "Nama Cabang Repo",
-            "value": "master",
+            "value": "main",
             "required": true
         },
         "MONGO_DB_URI": {
