@@ -46,7 +46,7 @@ The easy way to host this bot, deploy to Heroku, Change the app country to Europ
 <a href="https://telegram.dog/XTZ_HerokuBot?start=UmV4YXNoaC94YW11c2ljIG1haW4"><img src=https://img.shields.io/badge/Deploy%20Via%20Telegram-blue?style=for-the-badge&logo=telegram" width="250""/</a>  </p>
 
 ### Support & Updates 
-<a href="https://t.me/NastySupportt"><img src="https://img.shields.io/badge/Join-Group%20Support-red.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/NastyProject"><img src="https://img.shields.io/badge/Join-Updates%20Channel-white.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/rexaprivateroom"><img src="https://img.shields.io/badge/Join-Group%20Support-red.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/tirexgugel"><img src="https://img.shields.io/badge/Join-Updates%20Channel-white.svg?style=for-the-badge&logo=Telegram"></a>
 
 
 ## Credits
