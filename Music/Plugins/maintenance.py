@@ -16,10 +16,10 @@ async def smex(_, message):
     if state == "on":
         user_id = 1
         await add_on(user_id)
-        await message.reply_text("✅ Musik Diaktifkan untuk Pemeliharaan")
+        await message.reply_text("🔧 SEDANG DI PERBAIKI/DYNOS ABIS!")
     elif state == "off":
         user_id = 1
         await add_off(user_id)
-        await message.reply_text("❌ Mode Pemeliharaan Dinonaktifkan")
+        await message.reply_text("✔️ SUDAH BISA DIGUNAKAN KEMBALI YA!")
     else:
         await message.reply_text(usage)
