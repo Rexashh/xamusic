@@ -46,7 +46,7 @@ def start_pannel():
             InlineKeyboardButton("📚 ᴄᴏᴍᴍᴀɴᴅ​ 📚", url="https://telegra.ph/REXA-EX-02-11"),
         ],
         [
-            InlineKeyboardButton("🌐 sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 🌐", url="https://github.com/Rexashh/xamusic"),
+            InlineKeyboardButton("⚡ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ⚡", url="https://github.com/Rexashh/xamusic"),
         ],
     ]
     return (
@@ -69,7 +69,7 @@ pstart_markup = InlineKeyboardMarkup(
             InlineKeyboardButton("📚 ᴄᴏᴍᴍᴀɴᴅ ​📚", url="https://telegra.ph/REXA-EX-02-11"),
         ],
         [
-            InlineKeyboardButton("🌐 sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 🌐", url="https://github.com/Rexashh/xamusic"),
+            InlineKeyboardButton("⚡ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ⚡", url="https://github.com/Rexashh/xamusic"),
         ],
     ]
 )
@@ -97,7 +97,7 @@ async def welcome(_, message: Message):
                     f"""
 👋 ** Halo senang rasanya bisa bergabung di grup ini**
 
-💡 **Jangan lupa untuk menjadikan saya sebagai admin di grup ini**
+💡 **Jadiin admin dulu ya baru bisa gunain bot music ini**
 """,
                     reply_markup=InlineKeyboardMarkup(out[1]),
                     disable_web_page_preview=True
@@ -138,7 +138,7 @@ async def play(_, message: Message):
         await app.send_message(
             message.chat.id,
             text=f"""
-**✨ Selamat Datang {rpk}!
+**🎸 Selamat Datang {rpk}!
 
 💬 [{BOT_NAME}](tg://user?id=2129034376) memungkinkan anda untuk memutar musik pada grup melalui obrolan suara yang baru di Telegram!
 
