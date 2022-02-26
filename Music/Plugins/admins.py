@@ -112,9 +112,9 @@ async def pause_cmd(_, message):
     checking = message.from_user.mention
     chat_id = message.chat.id
     if not await is_active_chat(chat_id):
-        return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara")
+        return await message.reply_text("ga ada lagu yang di putar anjir, periksa lagi napa")
     elif not await is_music_playing(message.chat.id):
-        return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara")   
+        return await message.reply_text("ga ada lagu yang di putar anjir, periksa lagi napa")   
     await music_off(chat_id)
     await music.pytgcalls.pause_stream(chat_id)
     await message.reply_text(f"🎧 Obrolan Suara Dijeda oleh {checking}!")
@@ -130,9 +130,9 @@ async def stop_cmd(_, message):
     checking = message.from_user.mention
     chat_id = message.chat.id
     if not await is_active_chat(chat_id):
-        return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara")
+        return await message.reply_text("ga ada lagu yang di putar anjir,Mau End apaan gua ini?")
     elif await is_music_playing(chat_id):
-        return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara") 
+        return await message.reply_text("ga ada lagu yang di putar anjir,Mau End apaan gua ini?") 
     else:
         await music_on(chat_id)
         await music.pytgcalls.resume_stream(chat_id)
@@ -157,7 +157,7 @@ async def stop_cmd(_, message):
         await music.pytgcalls.leave_group_call(chat_id)
         await message.reply_text(f"**🎧 Obrolan Suara Berakhir/Dihentikan {checking}!**") 
     else:
-        return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara")
+        return await message.reply_text("ga ada lagu yang di putar anjir,Mau End apaan gua ini?")
     
 @app.on_message(filters.command(["skip", f"skip@{BOT_USERNAME}", "sk"]))
 async def stop_cmd(_, message): 
