@@ -1,6 +1,6 @@
 {
     "name": "XaMusic",
-    "description": "Music allow you to stream music trought the telegram voice chat feature.",
+    "description": "Ini Bot music Buat telegram, Btw kalo Deploy baca tolol disuruhnya description nya biar lu ga salah mmk!.",
     "logo": "https://telegra.ph/file/ecb0d6835643cb4630151.jpg",
     "keywords": ["music", "voice chat", "telegram"],
     "repository": "https://github.com/Rexashh/xamusic",
@@ -36,12 +36,12 @@
             "value": ""
         },
         "HEROKU_API_KEY": {
-            "description": "Kunci API akun Heroku Anda",
+            "description": "API KEY akun Heroku Anda",
             "value": "",
             "required": false
         },
         "HEROKU_APP_NAME": {
-           "description": "Nama app heroku Anda/samain kayak appname",
+           "description": "Nama app heroku Anda/samain kayak appname yang pertama kali lu masukin",
            "value": "",
            "required": false
         },
@@ -61,7 +61,7 @@
             "value": "1224143544"
         },
         "DURATION_LIMIT": {
-            "description": "diisi, jangan ubah ini!!",
+            "description": "diisi, (jangan ubah ini!!) /skip aja anjg",
             "required": true,
             "value": "3600"
         },
@@ -71,17 +71,17 @@
             "value": ""
         },
         "UPSTREAM_REPO": {
-            "description": "Jika Anda tidak tahu ini, Biarkan apa adanya",
+            "description": "Kalo lu ga tau ya /skip aja anjng",
             "value": "https://github.com/Rexashh/xamusic",
             "required": true
         },
         "UPSTREAM_BRANCH": {
-            "description": "Nama Cabang Repo",
+            "description": "Nama Cabang Repo (isi main atau /skip aja)",
             "value": "main",
             "required": true
         },
         "MONGO_DB_URI": {
-            "description": "isi dengan url mongodb dapatkan dari mongodb.cloud.com (jangan gunakan milik saya di bawah!)",
+            "description": "isi dengan url mongodb dapatkan dari mongodb.cloud.com (jangan pake punya gua anj, modal!! kalo gatau caranya chat @JustRex)",
             "required": true,
             "value": ""
         }
