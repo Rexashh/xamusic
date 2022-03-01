@@ -262,7 +262,7 @@ async def usage_dynos(client, message):
     AppMinutes = math.floor(AppQuotaUsed % 60)
     await asyncio.sleep(1.5)
     text = f"""
-**ᴅʏɴᴏ ᴜsᴀɢᴇ**
+**ᴅʏɴᴏ ᴜsᴀɢᴇ⚡**
 
 <u>Usage:</u>
 Total Used: `{AppHours}`**h**  `{AppMinutes}`**m**  [`{AppPercentage}`**%**]
