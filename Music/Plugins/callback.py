@@ -136,10 +136,10 @@ async def pausevc(_, CallbackQuery):
             )
             await CallbackQuery.message.delete()
         else:
-            await CallbackQuery.answer(f"Tidak ada yang diputar!", show_alert=True)
+            await CallbackQuery.answer(f"ga ada yang diputar!", show_alert=True)
             return
     else:
-        await CallbackQuery.answer(f"Tidak ada yang diputar di Musik!", show_alert=True)
+        await CallbackQuery.answer(f"ga ada yang diputar di Musik!", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("resumevc"))
