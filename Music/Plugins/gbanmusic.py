@@ -25,11 +25,11 @@ async def ban_globally(_, message):
         from_user = message.from_user
         sudoers = await get_sudoers()
         if user.id == from_user.id:
-            return await message.reply_text("Anda ingin memblokir diri sendiri?")
+            return await message.reply_text("ngapain ngeban diri sendiri tolol!?")
         elif user.id == BOT_ID:
-            await message.reply_text("Haruskah saya memblokir diri saya sendiri??")
+            await message.reply_text("Ini harus banget gua ban diri gua sendiri??")
         elif user.id in sudoers:
-            await message.reply_text("Anda ingin memblokir pengguna sudo?")
+            await message.reply_text("Ngapain Ngeban sudo tolol!?")
         else:
 
             await add_gban_user(user.id)
@@ -77,9 +77,9 @@ __**Larangan Global Baru pada Musik**__
     mention = message.reply_to_message.from_user.mention
     sudoers = await get_sudoers()
     if user_id == from_user_id:
-        await message.reply_text("Anda ingin memblokir diri sendiri?")
+        await message.reply_text("ngapain ngeban diri sendiri tolol!?")
     elif user_id == BOT_ID:
-        await message.reply_text("Haruskah saya memblokir diri saya sendiri??")
+        await message.reply_text("Ini harus banget gua ban diri gua sendiri??")
     elif user_id in sudoers:
         await message.reply_text("Anda ingin memblokir pengguna sudo?")
     else:
@@ -148,7 +148,7 @@ async def unban_globally(_, message):
         else:
             is_gbanned = await is_gbanned_user(user.id)
             if not is_gbanned:
-                await message.reply_text("Dia sudah bebas, mengapa menggertaknya?")
+                await message.reply_text("Dia sudah bebas, mau lu apain lagi?")
             else:
                 await remove_gban_user(user.id)
                 await message.reply_text(f"Ungbanned!")
@@ -168,7 +168,7 @@ async def unban_globally(_, message):
     else:
         is_gbanned = await is_gbanned_user(user_id)
         if not is_gbanned:
-            await message.reply_text("Dia sudah bebas, mengapa menggertaknya?")
+            await message.reply_text("Dia sudah bebas, mau ngapain lagi?")
         else:
             await remove_gban_user(user_id)
             await message.reply_text(f"Ungbanned!")
