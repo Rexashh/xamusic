@@ -1,4 +1,4 @@
-<h2 align="centre">XA Music Player</h2>
+<h2 align="centre">XA MUSIC PLAYER</h2>
 
 <p align="center">
   <img src="https://telegra.ph/file/cff3a78b0bbab05e9be21.jpg">
