@@ -1,13 +1,14 @@
 import asyncio
-from Music import app, OWNER
-from pyrogram import filters, Client
-from pyrogram.types import Message
-from Music.MusicUtilities.database.chats import (get_served_chats, is_served_chat, add_served_chat, get_served_chats)
-from ..MusicUtilities.helpers.filters import command
+from pyrogram import Client, filters
+from pyrogram.types import Dialog, Chat, Message
+from pyrogram.errors import UserAlreadyParticipant
+from Music.config Import OWNER_ID
+from Music.MusicUtilities.tgcallsrun import ASS_ACC as USER
 
 
-@app.on_message(filters.command("broadcast_pin") & filters.user(OWNER))
-async def broadcast_message_pin(_, message):
+
+@Client.on_message(filters.command("broadcast") & filters.user(OWNER_ID) & ~filter.edited)
+async def gcast(_, message: Message):
     if not message.reply_to_message:
         pass
     else :
