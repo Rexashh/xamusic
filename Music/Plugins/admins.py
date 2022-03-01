@@ -171,7 +171,7 @@ async def stop_cmd(_, message):
     chat_id = message.chat.id
     chat_title = message.chat.title
     if not await is_active_chat(chat_id):
-        await message.reply_text("Tidak ada music yang diputar")
+        await message.reply_text("Mau Skip apaan ini gua ? ga ada musik yg lagi diputar anjg")
     else:
         task_done(chat_id)
         if is_empty(chat_id):
