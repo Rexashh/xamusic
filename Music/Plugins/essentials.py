@@ -42,7 +42,7 @@ async def update(_, message: Message):
         await start_restart_stage(x.chat.id, x.message_id)
         os.execvp("python3", ["python3", "-m", "Music"])
     else:
-        await message.reply_text("Sudah Up To Date Dengan Versi Terbaru")
+        await message.reply_text("Versi ini udah yang paling update bro !")
         
 async def aexec(code, client, message):
     exec(
