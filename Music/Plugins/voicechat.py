@@ -77,7 +77,7 @@ async def activevc(_, message: Message):
         else:
             await mystic.edit(msg)
     else:
-        await message.reply_text(f"Tidak ada dalam Antrian")
+        await message.reply_text("ga ada dalam Antrian")
 
 
 @app.on_message(filters.command("activevc") & filters.user(SUDOERS))
