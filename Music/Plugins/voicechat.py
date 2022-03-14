@@ -8,7 +8,7 @@ from pyrogram import Client, filters
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
                             Voice)
 
-from config import get_queue
+from Music.config import get_queue
 from Music import SUDOERS, app, db_mem, random_assistant
 from Music.Database import (get_active_chats, get_active_video_chats,
                             get_assistant, is_active_chat, save_assistant)
