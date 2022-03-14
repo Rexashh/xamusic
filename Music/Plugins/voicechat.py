@@ -10,8 +10,7 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
 
 from Music.config import get_queue
 from Music import SUDOERS, app, db_mem, userbot
-from Music.Database import (get_active_chats, get_active_video_chats,
-                            get_assistant, is_active_chat, save_assistant)
+from Music.MusicUtilities.database import get_active_chats, is_active_chat
 from Music.Decorators.checker import checker, checkerCB
 from Music.Inline import choose_markup, primary_markup
 from Music.Utilities.assistant import get_assistant_details
