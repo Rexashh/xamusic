@@ -9,7 +9,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from Music import SUDOERS, app, db_mem, userbot
-from Music.Database import (get_active_chats, get_active_video_chats, is_active_chat)
+from Music.MusicUtilities.Database import (get_active_chats, get_active_video_chats, is_active_chat)
 from Music.MusicUtilities.helpers.checker import checker, checkerCB
 
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
