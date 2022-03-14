@@ -29,6 +29,58 @@ Only for Sudo Users
 - Bot will leave the particular chat.
 """
 
+@app.on_callback_query(filters.regex("gback_list_chose_stream"))
+async def gback_list_chose_stream(_, CallbackQuery):
+    await CallbackQuery.answer()
+    callback_data = CallbackQuery.data.strip()
+    callback_request = callback_data.split(None, 1)[1]
+    videoid, duration, user_id = callback_request.split("|")
+    if CallbackQuery.from_user.id != int(user_id):
+        return await CallbackQuery.answer(
+            "This is not for you! Search You Own Song.", show_alert=True
+        )
+    buttons = choose_markup(videoid, duration, user_id)
+    await CallbackQuery.edit_message_reply_markup(
+        reply_markup=InlineKeyboardMarkup(buttons)
+    )
+
+
+@app.on_callback_query(filters.regex("pr_go_back_timer"))
+async def pr_go_back_timer(_, CallbackQuery):
+    await CallbackQuery.answer()
+    callback_data = CallbackQuery.data.strip()
+    callback_request = callback_data.split(None, 1)[1]
+    videoid, user_id = callback_request.split("|")
+    if await is_active_chat(CallbackQuery.message.chat.id):
+        if db_mem[CallbackQuery.message.chat.id]["videoid"] == videoid:
+            dur_left = db_mem[CallbackQuery.message.chat.id]["left"]
+            duration_min = db_mem[CallbackQuery.message.chat.id]["total"]
+            buttons = primary_markup(videoid, user_id, dur_left, duration_min)
+            await CallbackQuery.edit_message_reply_markup(
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+
+
+@app.on_callback_query(filters.regex("timer_checkup_markup"))
+async def timer_checkup_markup(_, CallbackQuery):
+    callback_data = CallbackQuery.data.strip()
+    callback_request = callback_data.split(None, 1)[1]
+    videoid, user_id = callback_request.split("|")
+    if await is_active_chat(CallbackQuery.message.chat.id):
+        if db_mem[CallbackQuery.message.chat.id]["videoid"] == videoid:
+            dur_left = db_mem[CallbackQuery.message.chat.id]["left"]
+            duration_min = db_mem[CallbackQuery.message.chat.id]["total"]
+            return await CallbackQuery.answer(
+                f"Remaining {dur_left} out of {duration_min} Mins.",
+                show_alert=True,
+            )
+        return await CallbackQuery.answer(f"Not Playing.", show_alert=True)
+    else:
+        return await CallbackQuery.answer(
+            f"No Active Voice Chat", show_alert=True
+        )
+
+
 @app.on_message(filters.command("queue"))
 async def activevc(_, message: Message):
     global get_queue
@@ -77,7 +129,7 @@ async def activevc(_, message: Message):
         else:
             await mystic.edit(msg)
     else:
-        await message.reply_text(f"Tidak ada dalam Antrian")
+        await message.reply_text(f"Nothing in Queue")
 
 
 @app.on_message(filters.command("activevc") & filters.user(SUDOERS))
