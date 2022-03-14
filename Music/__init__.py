@@ -41,7 +41,7 @@ def initialize():
 
 ### Mongo DB
 MONGODB_CLI = Bot(mango)
-db = MONGODB_CLI
+db = MONGODB_CLI.Music
 pymongodb = ""
 
 ### Boot Time
