@@ -1,8 +1,8 @@
 from typing import Dict, List, Union
 
-from Yukki import db
+from Music import db
 
-videodb = db.yukkivideocalls
+videodb = db.Musicvideocalls
 
 
 ## limit
