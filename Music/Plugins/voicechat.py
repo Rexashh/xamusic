@@ -4,18 +4,18 @@ import shutil
 import subprocess
 from sys import version as pyver
 
+from Music.config import get_queue
 from pyrogram import Client, filters
+from pyrogram.types import Message
+
+from Music import SUDOERS, app, db_mem, userbot
+from Music.MusicUtilities.database import get_active_chats, is_active_chat
+from Music.MusicUtilities.helpers.checker import checker, checkerCB
+
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
                             Voice)
 
-from Music.config import get_queue
-from Music import SUDOERS, app, db_mem, userbot
-from Music.MusicUtilities.helpers.checker import checker, checkerCB
-
-
-
-
-loop = asyncio.get_event_loop
+loop = asyncio.get_event_loop()
 
 __MODULE__ = "Join/Leave"
 __HELP__ = """
@@ -77,7 +77,7 @@ async def activevc(_, message: Message):
         else:
             await mystic.edit(msg)
     else:
-        await message.reply_text(f"Nothing in Queue")
+        await message.reply_text(f"Tidak ada dalam Antrian")
 
 
 @app.on_message(filters.command("activevc") & filters.user(SUDOERS))
