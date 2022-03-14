@@ -9,7 +9,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from Music import SUDOERS, app, db_mem, userbot
-from Music.MusicUtilities.database import get_active_chats, is_active_chat
+from Music.Database import (get_active_chats, get_active_video_chats, is_active_chat)
 from Music.MusicUtilities.helpers.checker import checker, checkerCB
 
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
@@ -87,6 +87,9 @@ async def activevc(_, message: Message):
     if await is_active_chat(message.chat.id):
         mystic = await message.reply_text("Please Wait... Getting Queue..")
         got_queue = get_queue.get(message.chat.id)
+        dur_left = db_mem[message.chat.id]["left"]
+        duration_min = db_mem[message.chat.id]["total"]
+        got_queue = get_queue.get(message.chat.id)
         if not got_queue:
             await mystic.edit(f"Nothing in Queue")
         fetched = []
@@ -101,6 +104,7 @@ async def activevc(_, message: Message):
         msg += "**Currently Playing:**"
         msg += "\n▶️" + current_playing[:30]
         msg += f"\n   ╚By:- {user_name}"
+        msg += f"\n   ╚Duration:- Remaining `{dur_left}` out of `{duration_min}` Mins."
         fetched.pop(0)
         if fetched:
             msg += "\n\n"
