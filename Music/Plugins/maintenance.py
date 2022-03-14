@@ -13,11 +13,11 @@ async def smex(_, message):
     chat_id = message.chat.id
     state = message.text.split(None, 1)[1].strip()
     state = state.lower()
-    if state == "on":
+    if state == "off":
         user_id = 1
         await add_on(user_id)
         await message.reply_text("🔧 SEDANG DI PERBAIKI/DYNOS ABIS!")
-    elif state == "off":
+    elif state == "on":
         user_id = 1
         await add_off(user_id)
         await message.reply_text("✔️ SUDAH BISA DIGUNAKAN KEMBALI YA!")
