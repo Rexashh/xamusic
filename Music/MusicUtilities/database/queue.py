@@ -5,8 +5,7 @@ from Music import db
 pytgdb = db.pytg
 admindb = db.admin
 
-
-## Queue Chats Audio
+## Queue Chats
 
 
 async def get_active_chats() -> list:
@@ -39,23 +38,26 @@ async def remove_active_chat(chat_id: int):
         return
     return await pytgdb.delete_one({"chat_id": chat_id})
 
-  
-## Music Playing or Paused  
-    
+
+## Music Playing or Paused
+
+
 async def is_music_playing(chat_id: int) -> bool:
     chat = await admindb.find_one({"chat_id_toggle": chat_id})
     if not chat:
         return True
     return False
 
+
 async def music_on(chat_id: int):
-    is_karma = await is_music_playing(chat_id)
-    if is_karma:
+    is_on = await is_music_playing(chat_id)
+    if is_on:
         return
     return await admindb.delete_one({"chat_id_toggle": chat_id})
 
+
 async def music_off(chat_id: int):
-    is_karma = await is_music_playing(chat_id)
-    if not is_karma:
+    is_on = await is_music_playing(chat_id)
+    if not is_on:
         return
     return await admindb.insert_one({"chat_id_toggle": chat_id})
